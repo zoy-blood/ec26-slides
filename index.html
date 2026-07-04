@@ -646,13 +646,13 @@
   <h2 class="mb6">Seven Specialized Agent Roles</h2>
   <div class="row" style="flex:1;">
     <div class="f1 col" style="gap:6px;">
-      <div class="g rr"><div class="ri b2">🛎️</div><div><div class="sm" style="font-weight:600;">Sentinel</div><div class="xs cm">Front-desk manager — structures user intent, spawns orchestrator</div></div></div>
-      <div class="g rr"><div class="ri b1">🎯</div><div><div class="sm" style="font-weight:600;">Orchestrator</div><div class="xs cm">Dispatch-only manager — decomposes requirements into milestones</div></div></div>
-      <div class="g rr"><div class="ri b3">🔭</div><div><div class="sm" style="font-weight:600;">Explorer</div><div class="xs cm">Analyzes requirements & logs, writes formal strategies (no code)</div></div></div>
-      <div class="g rr"><div class="ri b4">⚒️</div><div><div class="sm" style="font-weight:600;">Worker</div><div class="xs cm">Primary coder — implements strategies, builds, and tests</div></div></div>
-      <div class="g rr"><div class="ri b5">👀</div><div><div class="sm" style="font-weight:600;">Reviewer</div><div class="xs cm">Checks design correctness, edge cases, interface compliance</div></div></div>
-      <div class="g rr"><div class="ri" style="background:rgba(248,113,113,0.06);">⚡</div><div><div class="sm" style="font-weight:600;">Critic</div><div class="xs cm">Adversarial stress-testing for coverage gaps</div></div></div>
-      <div class="g rr"><div class="ri b1">🔍</div><div><div class="sm" style="font-weight:600;">Auditor</div><div class="xs cm">Verifies authenticity, prevents "LLM laziness" or shortcuts</div></div></div>
+      <div class="g rr"><div class="ri b2">🛎️</div><div><div class="sm" style="font-weight:600;">Sentinel</div><div class="xs cm">The "front-desk manager" — does not write code, analyze logs, or make technical decisions. Focuses entirely on structuring user intent, spawning the Orchestrator, and supervising overall task completion.</div></div></div>
+      <div class="g rr"><div class="ri b1">🎯</div><div><div class="sm" style="font-weight:600;">Orchestrator</div><div class="xs cm">A dispatch-only manager — never writes code or executes builds itself. Focuses on decomposing requirements into milestones, kicking off other specialized subagents, and synthesizing reports.</div></div></div>
+      <div class="g rr"><div class="ri b3">🔭</div><div><div class="sm" style="font-weight:600;">Explorer</div><div class="xs cm">Analyzes requirements and previous logs to write formal strategies for the Orchestrator to act on, but never writes code itself.</div></div></div>
+      <div class="g rr"><div class="ri b4">⚒️</div><div><div class="sm" style="font-weight:600;">Worker</div><div class="xs cm">The actual coder that implements the strategies, builds the code, and runs tests.</div></div></div>
+      <div class="g rr"><div class="ri b5">👀</div><div><div class="sm" style="font-weight:600;">Reviewer</div><div class="xs cm">Independently reviews the Worker's changes for design correctness, edge cases, and interface contract compliance.</div></div></div>
+      <div class="g rr"><div class="ri" style="background:rgba(248,113,113,0.06);">⚡</div><div><div class="sm" style="font-weight:600;">Critic</div><div class="xs cm">Stress-tests the solution, runs adversarial tests to find gaps in coverage.</div></div></div>
+      <div class="g rr"><div class="ri b1">🔍</div><div><div class="sm" style="font-weight:600;">Auditor</div><div class="xs cm">An independent investigator that verifies the authenticity and robustness of the generated solutions.</div></div></div>
     </div>
     <div style="width:300px;" class="col">
       <div class="g glow" style="flex:1; border-color:rgba(167,139,250,0.15);">
