@@ -763,6 +763,10 @@
     </div>
   </div>
   <p class="cm xs mt4" style="text-align:right;">Source: antigravity.google/blog/google-antigravity-built-an-os</p>
+  <div class="nav">
+    <a href="#s11">← Prev</a>
+    <a href="#s13">Next →</a>
+  </div>
 </div>
 
 <!-- ===== ALT B: PIPELINE FLOW ===== -->
@@ -879,6 +883,7 @@
 </div>
 
 <script>
+var slideIds = Array.from(document.querySelectorAll('.slide')).map(function(s){return s.id;});
 function scaleSlides() {
   var sw = 1280, sh = 720;
   var scale = Math.min(window.innerWidth / sw, window.innerHeight / sh);
@@ -886,6 +891,14 @@ function scaleSlides() {
   for (var i = 0; i < slides.length; i++) {
     slides[i].style.transform = 'scale(' + scale + ')';
   }
+}
+function currentIndex() {
+  var hash = (location.hash || '#s1').replace('#','');
+  var idx = slideIds.indexOf(hash);
+  return idx >= 0 ? idx : 0;
+}
+function goToSlide(idx) {
+  if (idx >= 0 && idx < slideIds.length) location.hash = '#' + slideIds[idx];
 }
 function showSlide() {
   var hash = location.hash || '#s1';
@@ -899,17 +912,27 @@ function showSlide() {
 window.addEventListener('resize', scaleSlides);
 window.addEventListener('hashchange', showSlide);
 window.addEventListener('keydown', function(e) {
-  var hash = location.hash || '#s1';
-  var num = parseInt(hash.replace('#s', ''));
-  var total = document.querySelectorAll('.slide').length;
+  var idx = currentIndex();
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ' || e.key === 'Enter') {
-    e.preventDefault();
-    if (num < total) location.hash = '#s' + (num + 1);
+    e.preventDefault(); goToSlide(idx + 1);
   } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Backspace') {
-    e.preventDefault();
-    if (num > 1) location.hash = '#s' + (num - 1);
+    e.preventDefault(); goToSlide(idx - 1);
   }
 });
+/* Touch swipe for mobile */
+var touchStartX = 0, touchStartY = 0;
+document.addEventListener('touchstart', function(e) {
+  touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
+}, {passive:true});
+document.addEventListener('touchend', function(e) {
+  var dx = e.changedTouches[0].screenX - touchStartX;
+  var dy = e.changedTouches[0].screenY - touchStartY;
+  if (Math.abs(dx) < 50 || Math.abs(dy) > Math.abs(dx)) return;
+  var idx = currentIndex();
+  if (dx < 0) goToSlide(idx + 1);
+  else goToSlide(idx - 1);
+}, {passive:true});
 scaleSlides();
 showSlide();
 </script>
