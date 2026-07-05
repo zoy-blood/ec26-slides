@@ -709,19 +709,16 @@
       <div class="g rr"><div class="ri b1">🎯</div><div><div class="sm" style="font-weight:600;">Orchestrator</div><div class="xs cm">A dispatch-only manager, i.e. never writes code or executes builds itself. Focuses on decomposing requirements into milestones, kicking off other specialized subagents, and synthesizing reports.</div></div></div>
     </div>
   </div>
-  <!-- Branch connectors: horizontal bar from orchestrator -->
-  <div style="display:flex; justify-content:center; margin:3px 0;">
-    <div style="width:80%; height:0; border-bottom:3px solid rgba(167,139,250,0.25); position:relative;">
-      <div style="position:absolute; left:50%; top:-4px; width:4px; height:4px; background:rgba(167,139,250,0.25);"></div>
+  <!-- Tree connector: horizontal bar + vertical drops -->
+  <div style="position:relative; margin:3px 0 0;">
+    <div style="position:absolute; top:0; left:10%; right:10%; height:3px; background:rgba(167,139,250,0.25); border-radius:2px;"></div>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:6px; height:16px;">
+      <div style="display:flex; justify-content:center;"><div style="width:3px; background:rgba(167,139,250,0.25); border-radius:0 0 2px 2px;"></div></div>
+      <div style="display:flex; justify-content:center;"><div style="width:3px; background:rgba(167,139,250,0.25); border-radius:0 0 2px 2px;"></div></div>
+      <div style="display:flex; justify-content:center;"><div style="width:3px; background:rgba(167,139,250,0.25); border-radius:0 0 2px 2px;"></div></div>
+      <div style="display:flex; justify-content:center;"><div style="width:3px; background:rgba(167,139,250,0.25); border-radius:0 0 2px 2px;"></div></div>
+      <div style="display:flex; justify-content:center;"><div style="width:3px; background:rgba(167,139,250,0.25); border-radius:0 0 2px 2px;"></div></div>
     </div>
-  </div>
-  <!-- 5 vertical drop lines -->
-  <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin-bottom:0;">
-    <div style="display:flex; justify-content:center;"><div style="width:3px; height:12px; background:rgba(167,139,250,0.2); border-radius:0 0 2px 2px;"></div></div>
-    <div style="display:flex; justify-content:center;"><div style="width:3px; height:12px; background:rgba(167,139,250,0.2); border-radius:0 0 2px 2px;"></div></div>
-    <div style="display:flex; justify-content:center;"><div style="width:3px; height:12px; background:rgba(167,139,250,0.2); border-radius:0 0 2px 2px;"></div></div>
-    <div style="display:flex; justify-content:center;"><div style="width:3px; height:12px; background:rgba(167,139,250,0.2); border-radius:0 0 2px 2px;"></div></div>
-    <div style="display:flex; justify-content:center;"><div style="width:3px; height:12px; background:rgba(167,139,250,0.2); border-radius:0 0 2px 2px;"></div></div>
   </div>
   <!-- Bottom row: 5 leaf roles -->
   <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:6px;">
